@@ -1,15 +1,28 @@
 package com.cpandit.springit;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class HomeController {
 
-    @RequestMapping("/")
+    //@RequestMapping ("/") // By default get
+    //@RequestMapping (path = "/" , method = RequestMethod.GET, consumes = "application/json", produces = "application/json")
+    @GetMapping("/")
     public String home (){
-        return "Hello World VVV..!";
+        return "index";
     }
-
 }
+
+//
+//@RestController
+//public class HomeController {
+//
+//    @RequestMapping("/")
+//    public String home (){
+//        return "Hello World VVV..!";
+//    }
+//
+//}
+
+
