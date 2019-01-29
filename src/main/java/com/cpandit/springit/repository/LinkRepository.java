@@ -11,4 +11,6 @@ public interface LinkRepository extends JpaRepository <Link, Long> {
 
     List <Link> findByTitleLikeOrderByCreationDateDesc (String strTitle);
 
+    // List <Link> findAll();
+
 }

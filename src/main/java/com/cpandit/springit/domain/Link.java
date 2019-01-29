@@ -1,6 +1,8 @@
 package com.cpandit.springit.domain;
 
-//import lombok.*;
+import lombok.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,21 +25,21 @@ public class Link extends Auditable {
     @GeneratedValue
     private Long id;
 
-    //@NonNull
+    @NonNull
     private String title;
 
-    //@NonNull
+    @NonNull
     private String url;
 
     //Comments
     @OneToMany(mappedBy = "link")
+    @JsonIgnore
     private List <Comment> comments = new ArrayList<>();
 
     public Link(String title, String url) {
         //super();
         this.title = title;
         this.url = url;
-
     }
 
     public Link() {
